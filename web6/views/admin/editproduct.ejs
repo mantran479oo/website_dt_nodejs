@@ -1,0 +1,76 @@
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <title>Nhóm 6 - Admin - Edit</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+  
+</head>
+
+<body class="bg-gradient-primary">
+
+    <div class="container">
+
+        <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0">
+                <!-- Nested Row within Card Body -->
+                <div class="row">
+                    <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+                    <div class="col-lg-7">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">Sửa thông tin sản phẩm</h1>
+                            </div>
+                            <form class="user" method="get" enctype="multipart/form-data">
+                            <%for(p of listP){%>
+                               <div class="form-group row">
+                            <div class="col-sm-6 mb-3 mb-sm-0 ">
+                                      <img src="/img/<%=p.imgProduct%>" alt="Smiley face" style="height: 162px;width: 170px;border-radius: 25px;margin-left: 30px; margin-top: 18px;">
+                                    </div>
+                                <div class="col-sm-6  mb-sm-3">
+                                    <input type="text" class="form-control form-control-user" name="name" id="exampleInputEmail"
+                                        placeholder="Tên sẩn phẩm" value="<%=p.nameProduct%>" required> <br>
+                                    <input type="text" class="form-control form-control-user" name="price" id="exampleInputEmail"
+                                        placeholder="Giá sản phẩm" value="<%=p.priceProduct%>" required><br>
+                                    <input type="number" class="form-control form-control-user" name="sl"  min="1"  id="exampleInputEmail"
+                                        placeholder="Số lượng sẩn phẩm" value="<%=p.amountProduct%>" required>
+                                </div> 
+                                </div>
+                                <input type="hidden" name="id" value="<%=p.idProduct%>">
+                                  <%}%>
+                                <button type="submit" formaction="products/update" class="btn btn-primary btn-user btn-block" >Cập nhật</button>
+                                <hr>
+                                <a href="/products" class="btn btn-google btn-user btn-block">Trở lại</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+</body>
+
+</html>

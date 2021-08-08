@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Thanh toán</title>
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/owl.carousel.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/css/form.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+
+
+  </head>
+  <body>
+    <div class="header-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="user-menu">
+                        <ul>
+                            <li><a href="/user/tai-khoan"><i class="fa fa-user"></i> Tài Khoản</a></li>
+                            <li><a href="/cart"><i class="fa fa-user"></i>Giỏ Hàng</a></li>
+                            <%if(!user){%>
+                                <li><a href="/user"><i class="fa fa-user"></i>Đăng nhập</a></li>
+                               <%}%>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="header-right">
+                        <ul class="list-unstyled list-inline">
+                            <li class="dropdown dropdown-small">
+                                <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">Tiền tệ:</span><span class="value">VNĐ </span><b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">VNĐ</a></li>
+                                    <li><a href="#">USD</a></li>
+                                    <li><a href="#">EURO</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown dropdown-small">
+                                <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">Ngôn ngữ :</span><span class="value">Tiếng Việt</span><b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Tiếng Việt</a></li>
+                                    <li><a href="#">English</a></li>
+                                    <li><a href="#">German</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End header area -->
+    <div class="site-branding-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="logo">
+                        <h1><a href="/"><img src="/img/vertu.jpg" style="border-radius: 15px ;"></a></h1>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="shopping-item">
+                        <a href="/cart">Giỏ Hàng - <span class="cart-amunt"></span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End site branding area -->
+    <div class="mainmenu-area">
+        <div class="container">
+            <div class="row">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/">Trang Chủ</a></li>
+                        <li><a href="/shop">Cửa Hàng</a></li>
+                        <li><a href="/cart">Giỏ Hàng</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End mainmenu area -->
+    <div class="product-big-title-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="product-bit-title text-center">
+                        <h2>Thanh toán</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="single-product-area">
+        <div class="zigzag-bottom"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class=".col-lg-3">
+                    </div>
+                    <div class=".col-lg-3" >
+                    <div class="single-sidebar">
+                        <h2 class="sidebar-title">Bài Đăng Gần Đây</h2>
+                        <ul>
+                            <li><a href="single-product.html">Galaxy - 2015</a></li>
+                            <li><a href="single-product.html">Galaxy A5</a></li>
+                            <li><a href="single-product.html">Galaxy S5</a></li>
+                            <li><a href="single-product.html">SAMSUNG S7</a></li>
+                            <li><a href="single-product.html">Galaxy Y</a></li>
+                        </ul>
+                      </div>
+                   </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="product-content-right">
+                        <div class="woocommerce">
+                            <div id="customer_details" class="col2-set">
+                                <div class="col-1">
+                                        <div class="woocommerce-billing-fields">
+                                        <%if(list){%>
+                                            <h3>Chi tiết thanh toán</h3>
+                                            <%for (u of list){%>
+
+                                            <table class="table table-bordered table-sm">
+                                            
+                                                <tbody>
+                                                <tr>
+                                                 
+                                                    <td><label class="" for="billing_country">Địa chỉ</label></td>
+                                                    <td> <p><%=u.address%></p></td>
+                                                
+                                                </tr>
+                                                 
+                                                <tr>
+                                                    <td width="150px"><label class="" for="billing_first_name">Họ</label></td>
+                                                    <td><p><%=u.firstname%></p></td>
+                                                
+                                                </tr>
+                                                <tr>
+                                                    <td><label class="" for="billing_first_name">Tên</label></td>
+                                                    <td><%=u.lastname%></td>
+                                            
+                                                </tr>
+                                                <tr>
+                                                    <td><label class="" for="billing_first_name">Gmail</label></td>
+                                                    <td><%=u.email%></td>
+                                            
+                                                </tr>
+                                                <tr>
+                                                    <td><label class="" for="billing_first_name">Số điện thoại</label></td>
+                                                    <td><%=u.phone%></td>
+                                            
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>                          
+                                    <%}%>
+                                <%}%>
+                                    </div>
+                                   </div>
+
+
+
+                                        <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sửa địa chỉ</button>
+
+                                        <div id="id01" class="modal">
+                                        
+                                        <form class="modal-content animate" action="/address" method="post">
+                                            <div class="imgcontainer">
+                                            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                                            </div>
+                                            <div class="csd">
+                                            <div class="form-group">
+                                              <label class="" for="billing_country">Địa chỉ <abbr title="required" class="required">*</abbr>
+                                                </label>                      
+                                            <select class="form-control form-control-lg" id="billing_country" name="address" required >
+                                                    <option value="">Hà Nội</option>
+                                                    <option value="AX">Hồ Chí Minh</option>
+                                                    <option value="AF">Hải Dương</option>
+                                                    <option value="AL">Hải Phòng</option>
+                                                    <option value="DZ">Quảng Ninh</option>
+                                                    <option value="AD">Thanh Hóa</option>
+                                                    <option value="AO">Nghệ An</option>
+                                                    <option value="AI">Hà Tĩnh</option>
+                                                    <option value="AQ">Cần Thơ</option>
+                                                    <option value="AG">Cà Mau</option>
+                                                    <option value="AR">Hà Giang</option>
+                                                    <option value="AM">Yên Bái</option>
+                                                    <option value="AW">Nam Định</option>
+                                                    <option value="AU">Thái Bính</option>
+                                                    <option value="AT">Hưng Yên</option>
+                                                    <option value="AZ">Ninh Bình</option>
+                                                    <option value="BS">Lạng Sơn</option>
+                                                    <option value="BH">Lào Cai</option>
+                                                    <option value="BD">Phú Thọ</option>
+                                                    <option value="BB">Vĩnh Phúc</option>
+                                                </select>
+                                            </div>
+                                            <p id="billing_first_name_field" class="form-row form-row-first validate-required">
+                                                <label class="" for="billing_first_name">Tên <abbr title="required" class="required">*</abbr>
+                                                </label>
+                                                <input type="text" value="" placeholder="" id="billing_first_name" name="firstname" required class="input-text ">
+                                            </p>
+                                            
+                                            <p id="billing_last_name_field" class="form-row form-row-last validate-required">
+                                                <label class="" for="billing_last_name">Họ <abbr title="required" class="required">*</abbr>
+                                                </label>
+                                                <input type="text" value="" placeholder="" id="billing_last_name" name="lastname" required class="input-text ">
+                                            </p>
+                                            <div class="clear"></div>
+                                            <p id="billing_address_1_field" class="form-row form-row-wide address-field validate-required">
+                                                <label class="" for="billing_address_1">Địa chỉ<abbr title="required" class="required">*</abbr>
+                                                </label>
+                                                <input type="text" value="" placeholder="Địa chỉ" id="billing_address_1" name="address1" required class="input-text ">
+                                            </p>
+                                            </p>
+                                            <div class="form-group">
+                                                <label class="" for="billing_email">Địa chỉ email <abbr title="required" class="required">*</abbr>
+                                            
+                                                </label>
+                                                <input type="email" class="form-control"  placeholder="" id="billing_email" name="email" required class="input-text ">
+                                            </div>
+
+                                            <p id="billing_phone_field" class="form-row form-row-last validate-required validate-phone">
+                                                <label class="" for="billing_phone">SĐT <abbr title="required" class="required">*</abbr>
+                                                </label>
+                                                <input type="text" value="" placeholder="" id="billing_phone" name="phone" required class="input-text ">
+                                            </p>
+                                                
+                                            <button type="submit">Sửa</button>
+                                            
+                                            </div>
+                                        </form>
+                                        </div>
+                                 </div>
+                                 <%if(cart.length>0){var total =0;%>
+                                 <h3 id="order_review_heading">ĐƠN HÀNG CỦA BẠN</h3>
+                                 <div id="order_review" style="position: relative;">
+                                    <table class="shop_table">
+                                        <thead>
+                                            <tr>
+                                                <th class="product-name">Sản phẩm</th>
+                                                <th class="product-total">Giá</th>
+                                            </tr>
+                                        </thead>
+                                  
+                                        <tfoot>
+                                           <tr class="shipping">
+                                                <th>Vận chuyển và Xử lý</th>
+                                                <td>
+                                                    Free Shipping
+                                                    <input type="hidden" class="shipping_method" value="free_shipping" id="shipping_method_0" data-index="0" name="shipping_method[0]">
+                                                </td>
+                                            </tr>
+
+
+                                            <tr class="order-total">
+                                                <th>Tổng đơn hàng</th>
+                                                <%cart.forEach(function(product){%>
+                                                 <%var gia = product.priceProduct*product.quantity;%>
+                                                <%total +=gia });%>
+                                            <td><strong><span class="amount"><%=total.toLocaleString('vi-VN')%> VND</span></strong> </td>
+                                            
+                                            </tr>   
+                                        </tfoot>
+                                         
+                                    </table>
+                                    <%}%>
+                                     <form method="post">
+                                    <div id="payment">
+                                        <ul class="payment_methods methods">
+                                            <li class="payment_method_bacs">
+                                                <input type="radio" data-order_button_text="" checked="checked" value="bacs" name="payment_method" class="input-radio" id="payment_method_bacs">
+                                                <label for="payment_method_bacs">Chuyển tiền trực tiếp qua ngân hàng </label>
+                                                <div class="payment_box payment_method_bacs">
+                                                    <p>Thực hiện thanh toán của bạn trực tiếp vào tài khoản ngân hàng của chúng tôi. Vui lòng sử dụng ID đơn đặt hàng của bạn làm tham chiếu thanh toán. Đơn đặt hàng của bạn sẽ không được giao cho đến khi tiền hết trong tài khoản của chúng tôi.</p>
+                                                </div>
+                                            </li>
+                                            <li class="payment_method_cheque">
+                                                <input type="radio" data-order_button_text="" value="cheque" name="payment_method" class="input-radio" id="payment_method_cheque">
+                                                <label for="payment_method_cheque">Thanh toán séc </label>
+                                                <div style="display:none;" class="payment_box payment_method_cheque">
+                                                    <p>Vui lòng gửi séc của bạn đến Tên cửa hàng, Phố cửa hàng, Thị trấn cửa hàng, Bang / Hạt cửa hàng, Mã bưu điện cửa hàng.</p>
+                                                </div>
+                                            </li>
+                                         <li class="payment_method_paypal">
+                                                <input type="radio" data-order_button_text="Proceed to PayPal" value="paypal" name="payment_method" class="input-radio" id="payment_method_paypal">
+                                                <label for="payment_method_paypal">PayPal <img alt="PayPal Acceptance Mark" src="https://www.paypalobjects.com/webstatic/mktg/Logo/AM_mc_vs_ms_ae_UK.png"><a title="What is PayPal?" class="about_paypal" href="https://www.paypal.com/gb/webapps/mpp/paypal-popup">What is PayPal?</a>
+                                                </label>
+                                                <div style="display:none;" class="payment_box payment_method_paypal">
+                                                    <p>Pay via PayPal; you can pay with your credit card if you don’t have a PayPal account.</p>
+                                                </div>
+                                            </li> 
+                                        </ul>
+
+                                        <div class="form-row place-order">
+                                            <input type="submit" formaction="/tai-khoan" class="btn btn-info" value="Đặt hàng">
+                                        </div>
+                                    </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer-top-area">
+        <div class="zigzag-bottom"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-about-us">
+                        <h2>Liên hệ hỗ trợ</h2>
+                        <ul>
+                            <li>Phone:0866773697</li>
+                            <li>Địa Chỉ:54 Triều Khúc-Thanh Xuân-Hà Nội</li>
+                        </ul>
+                        <div class="footer-social">
+                            <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                            <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
+                            <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-menu">
+                        <h2 class="footer-wid-title">Điều hướng </h2>
+                        <ul>
+                            <li><a href="#">Tài Khoản</a></li>
+                            <li><a href="#">Lịch sử đơn hàng</a></li>
+                            <li><a href="#">Danh sách</a></li>
+                            <li><a href="#">Liên hệ nhà cung cấp</a></li>
+                            <li><a href="#">Trang đầu</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-menu">
+                        <h2 class="footer-wid-title">Thể Loại</h2>
+                        <ul>
+                            <li><a href="#">Điện thoại thông minh</a></li>
+                            <li><a href="#">Trang chủ</a></li>
+                            <li><a href="#">LED TV</a></li>
+                            <li><a href="#">Máy tính bảng</a></li>
+                            <li><a href="#">Phụ kiện</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-newsletter">
+                        <h2 class="footer-wid-title">Bản tin</h2>
+                        <p>Đăng ký nhận bản tin của chúng tôi và nhận các ưu đãi độc quyền mà bạn sẽ không tìm thấy ở bất kỳ nơi nào khác ngay trong hộp thư đến của bạn!</p>
+                        <div class="newsletter-form">
+                            <form action="#">
+                                <input type="email" placeholder="Nhập địa chỉ email">
+                                <input type="submit" value="Bật Thông Báo">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End footer top area -->
+
+    <div class="footer-bottom-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="copyright">
+                        <p>&copy; 2021 Đã đăng ký bản quyền</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="footer-card-icon">
+                        <i class="fa fa-cc-discover"></i>
+                        <i class="fa fa-cc-mastercard"></i>
+                        <i class="fa fa-cc-paypal"></i>
+                        <i class="fa fa-cc-visa"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <!-- Latest jQuery form server -->
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    
+    <!-- Bootstrap JS form CDN -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    
+    <!-- jQuery sticky menu -->
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/jquery.sticky.js"></script>
+    
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+    <!-- jQuery easing -->
+    <script src="/js/jquery.easing.1.3.min.js"></script>
+    
+    <!-- Main Script -->
+    <script src="/js/main.js"></script>
+  </body>
+</html>

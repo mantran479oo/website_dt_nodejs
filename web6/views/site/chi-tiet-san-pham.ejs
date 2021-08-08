@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chi Tiết Sản Phẩm</title>
+    
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
+    
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/owl.carousel.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="stylesheet" href="/css/chat.css">
+
+   
+  </head>
+  <body>
+   
+    <div class="header-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="user-menu">
+                        <ul>
+                            <li><a href="/user/tai-khoan"><i class="fa fa-user"></i> Tài Khoản</a></li>
+                            
+                            <li><a href="/cart"><i class="fa fa-user"></i> Giỏ hàng </a></li>
+                           
+                            <%if(!user){%>
+                                <li><a href="/user"><i class="fa fa-user"></i>Đăng nhập</a></li>
+                               <%}%> 
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="header-right">
+                        <ul class="list-unstyled list-inline">
+                            <li class="dropdown dropdown-small">
+                                <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">Tiền tệ :</span><span class="value">VNĐ </span><b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">VND</a></li>
+                                    <li><a href="#">USD</a></li>
+                                    <li><a href="#">EURO</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown dropdown-small">
+                                <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">Ngôn ngữ :</span><span class="value">Tiếng Việt </span><b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Tiếng Việt</a></li>
+                                    <li><a href="#">English</a></li>
+                                    <li><a href="#">German</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End header area -->
+    
+    <div class="site-branding-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="logo">
+                        <h1><a href="/"><img src="/img/vertu.jpg" style="border-radius: 15px ;"></a></h1>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="shopping-item">
+                        <a href="/cart">Giỏ Hàng - <span class="cart-amunt"></span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End site branding area -->
+    
+    <div class="mainmenu-area">
+        <div class="container">
+            <div class="row">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Điều hướng</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div> 
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="/">Trang chủ</a></li>
+                        <li><a href="/shop">Cửa Hàng</a></li>
+                        <li><a href="/cart">Giỏ Hàng</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End mainmenu area -->
+
+    <div class="product-big-title-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="product-bit-title text-center">
+                        <h2>Chi Tiết Sản Phẩm</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+                      <div><button id="myBtn2" style="background:#00cc00" onclick="openForm()">
+                           <img src='/img/messenger.png' title='Chát Messenger' style='margin: 4px;' width='40px'/></button>
+                        </div>
+
+                    <div class="chat-popup" id="myForm">
+                    <form action="/action_page.php" class="form-container">
+                        <h1>Chat</h1>
+
+                        <label for="msg"><b>Message</b></label>
+                        <textarea placeholder="Type message.." name="msg" required></textarea>
+
+                        <button type="submit" class="btn">Send</button>
+                        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                    </form>
+                    </div>
+    <div class="single-product-area">
+        <div class="zigzag-bottom"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4"> 
+                  <div class="nac">
+                    <div class="single-sidebar">
+                        <h2 class="sidebar-title">Bài Đăng Gần Đây</h2>
+                        <ul>
+                         <%for (lis of listSmall){%>
+                            <li><a href="/shop"><%=lis.nameProduct%></a></li>
+                             <%}%>
+                        </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="product-content-right">
+                        <div class="product-breadcroumb">
+                            <a href="">Trang chủ</a>
+                            <a href="">Tên danh mục</a>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="product-images">
+                                    <div class="product-main-img">
+                                    <div class="product-slider-single normal-slider"></div>
+                                    <img src="/img/<%=listP.imgProduct%>" alt="">
+                                    </div>
+                                    <div class="product-gallery">
+                                        <% for (var i = 1; i < 4; i++) { %>
+                                        <img src="/img/<%=list.imgProduct%>" alt="">
+                                        <%}%>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="product-inner">
+                                    <div class="product-name"><h2><%=listP.nameProduct%></h2></div>
+                                    <div class="product-inner-price">
+                                        <p ><%=listP.priceProduct.toLocaleString('vi-VN')%> VNĐ</p>
+                                    </div>
+                                    <form action="/cart/<%=listP.idProduct%>" class="cart">
+                                        <button class="btn btn-primary" onclick="cart()" type="submit">Mua</button>
+                                    </form>
+
+                                    <div role="tabpanel">
+                                        <ul class="product-tab" role="tablist">
+                                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Mô tả</a></li>
+                                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Nhận xét</a></li>
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div role="tabpanel" class="tab-pane fade in active" id="home">
+                                                <h2>Mô tả sản phẩm</h2>
+                                                <p><%=listP.desProduct%></p>
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane fade" id="profile">
+                                                <h2>Nhận xét</h2>
+                                                <div class="submit-review">
+                                                    <p><label for="name">Họ và Tên</label> <input name="name" type="text"></p>
+                                                    <p><label for="email">Email</label> <input name="email" type="email"></p>
+                                                    <div class="rating-chooser">
+                                                        <p>Đánh giá</p>
+
+                                                        <div class="rating-wrap-post">
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                        </div>
+                                                    </div>
+                                                    <p><label for="review">Nhận xét của bạn</label> <textarea name="review" id="" cols="30" rows="10"></textarea></p>
+                                                    <p><input type="submit" value="Submit"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="related-products-wrapper">
+                            <h2 class="related-products-title">Những sảm phẩm tương tự</h2>
+                            <div class="related-products-carousel">
+                                <%for(p of list){%>
+                                <div class="single-product">
+                                    <div class="product-f-image">
+                                        <img src="/img/<%=p.imgProduct%>" alt="">
+                                        <div class="product-hover">
+                                            <a href="/cart/<%=p.idProduct%>" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Mua</a>
+                                            <a href="/shop/<%=p.idProduct%>" class="view-details-link"><i class="fa fa-link"></i> 
+                                                Xem chi tiết</a>
+                                        </div>
+                                    </div>
+
+                                    <h2><a href=""><%=p.nameProduct%></a></h2> 
+
+                                   <div class="product-carousel-price">
+                                        <ins><%=p.priceProduct.toLocaleString('vi-VN')%> VNĐ</ins> 
+                                    </div> 
+                                </div>
+                                <%}%>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="footer-top-area">
+        <div class="zigzag-bottom"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-about-us">
+                        <h2>Liên hệ hỗ trợ</h2>
+                        <ul>
+                            <li>Phone:0866773697</li>
+                            <li>Địa Chỉ:54 Triều Khúc-Thanh Xuân-Hà Nội</li>
+                        </ul>
+                        <div class="footer-social">
+                            <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                            <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
+                            <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-menu">
+                        <h2 class="footer-wid-title">Điều Hướng </h2>
+                        <ul>
+                            <li><a href="#">Tài Khoản</a></li>
+                            <li><a href="#">Lịch sử đơn hàng</a></li>
+                            <li><a href="#">Danh sách</a></li>
+                            <li><a href="#">Liên hệ nhà cung cấp</a></li>
+                            <li><a href="#">Trang đầu</a></li>
+                        </ul>                        
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-menu">
+                        <h2 class="footer-wid-title">Thể Loại</h2>
+                        <ul>
+                            <li><a href="#">Điện thoại thông minh</a></li>
+                            <li><a href="#">Trang chủ</a></li>
+                            <li><a href="#">LED TV</a></li>
+                            <li><a href="#">Máy tính bảng</a></li>
+                            <li><a href="#">Phụ kiện</a></li>
+                        </ul>                        
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-newsletter">
+                        <h2 class="footer-wid-title">Bản tin</h2>
+                        <p>Đăng ký nhận bản tin của chúng tôi và nhận các ưu đãi độc quyền mà bạn sẽ không tìm thấy ở bất kỳ nơi nào khác ngay trong hộp thư đến của bạn!</p>
+                        <div class="newsletter-form">
+                            <form action="#">
+                                <input type="email" placeholder="Địa chỉ email">
+                                <input type="submit" value="Bật Thông Báo">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End footer top area -->
+    <div class="footer-bottom-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="copyright">
+                       <p>&copy; 2021 Đã đăng ký bản quyền </p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="footer-card-icon">
+                        <i class="fa fa-cc-discover"></i>
+                        <i class="fa fa-cc-mastercard"></i>
+                        <i class="fa fa-cc-paypal"></i>
+                        <i class="fa fa-cc-visa"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <!-- Latest jQuery form server -->
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    
+    <!-- Bootstrap JS form CDN -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+  
+}
+function cart(){
+    $('#myModal').modal();
+    
+}
+</script>
+    <!-- jQuery sticky menu -->
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/jquery.sticky.js"></script>
+    
+    <!-- jQuery easing -->
+    <script src="/js/jquery.easing.1.3.min.js"></script>
+    
+    <!-- Main Script -->
+    <script src="/js/main.js"></script>
+         <div class="modal fade" id="myModal">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Mua thành công</h4>
+                        </div>  
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Tiếp tục mua</button>
+                    <a  class="btn btn-danger" href="/cart">Giỏ hàng</a>
+                     </div>
+                                            
+                    </div>
+                  </div>
+            </div>                        
+        </div>
+  </body>
+</html>
